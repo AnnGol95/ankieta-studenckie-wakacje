@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Anna\Documents\GitHub\ankieta-studenckie-wakacje\env"
+VIRTUAL_ENV="C:\Users\Anna\Desktop\ankieta-studenckie-wakacje-master\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

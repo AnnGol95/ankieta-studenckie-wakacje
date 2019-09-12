@@ -67,39 +67,7 @@ def show_raw():
 
 @app.route("/result")
 def show_result():
-    fd_list = db.session.query(Formdata).all()
-
-    q1 = []
-    q2 = []
-    q3 = []
-
-    for el in fd_list:
-        q1.append(el.q1)
-        q2.append(el.q2)
-        q3.append(el.q3)
-
-    q1 = Counter(q1).values()
-    q2 = Counter(q2).values()
-    q3 = Counter(q3).values()
-
-    if len(q1) > 0:
-        mean_q1 = statistics.mode(q1)
-    else:
-        mean_q1 = 0
-    if len(q2) > 0:
-        mean_q2 = statistics.mean(q2)
-    else:
-        mean_q2 = 0
-    if len(q3) > 0:
-        mean_q3 = statistics.mean(q3)
-    else:
-        mean_q3 = 0
-
-    # Prepare data for google charts
-    data = [['q1', mean_q1], ['q2', mean_q2], ['q3', mean_q3]]
-
-    return render_template('result.html', data=data)
-
+    return render_template('result.html')
 
 @app.route("/save", methods=['POST'])
 def save():
